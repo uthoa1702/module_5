@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+    let courses = [
+        {
+            id: 1,
+            title: "ReactJS Tutorial",
+            rating: 4.2,
+        },
+        {
+            id: 2,
+            title: "Angular Tutorial",
+            rating: 2.5,
+        },
+        {
+            id: 3,
+            title: "VueJS Tutorial",
+            rating: 3.8,
+        },
+        {
+            id: 4,
+            title: "Java Tutorial",
+            rating: 4,
+        },
+        {
+            id: 5,
+            title: "JavaScript Tutorial",
+            rating: 3.5,
+        },
+    ];
+    // yeu cau 1
+    const course = courses.filter((course) => {
+        return course.rating >= 4;
+    })
+    console.log(course);
+
+
+    /* yeu cau 2*/
+
+    let findLessThan4 = courses.filter((cou) => {
+        if (cou.rating < 4) {
+            return cou;
+        }
+    })
+    console.log(findLessThan4);
+
+
+    // yeu cau 3
+
+    let addedCourses = [
+        {
+            id: 6,
+            title: "PHP Tutorial",
+            rating: 3,
+        },
+        {
+            id: 7,
+            title: "C# Tutorial",
+            rating: 2,
+        },
+        {
+            id: 8,
+            title: "Docker Tutorial",
+            rating: 3.8,
+        }
+    ];
+    let arr = [...courses, ...addedCourses];
+    console.log(arr);
+
+
+</script>
