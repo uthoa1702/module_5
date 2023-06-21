@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<!--    <link rel="stylesheet" href="_bootswatch.scss">-->
+<!--    <link rel="stylesheet" href="_variables.scss">-->
+    <script async src="//jsfiddle.net/bootswatch/a3z27pyf/embed/"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../footer-css.css">
+    <link rel="stylesheet" href="../../css-for-prototype.css">
+</head>
+<style>
+    label{
+        font-size: large;
+    }
+</style>
+<body>
+<nav style="background-color: black; color: white" class="navbar navbar-expand-lg  fixed-top"  >
+    <div  class="container">
+        <a style="color: white" class="navbar-brand" href="#"><img style="height: 45px;padding: 5px; width: 200px" src="https://www.furama.com/images/LOGOFHI_4C_Reverse.png" alt=""></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item active">
+                    <a style="color: white" class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a style="color: white" class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a style="color: white" class="nav-link" href="#">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a style="color: white" class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div style="padding: 100px" class="container">
+    <div class=" text-center mt-5 ">
+
+        <h1 >Create Villa Form</h1>
+
+    </div>
+
+
+    <div class="row ">
+        <div class="col-lg-7 mx-auto">
+            <div class="card mt-2 mx-auto p-4 bg-light">
+                <div class="card-body bg-light">
+
+                    <div class = "container">
+                        <form id="contact-form" role="form">
+
+
+
+                            <div class="controls">
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="form_name">Villa Name *</label>
+                                            <input id="form_name" type="text" name="name" class="form-control"  required="required" data-error="Firstname is required.">
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="form_lastname">Area *</label>
+                                            <input id="form_lastname" type="text" name="surname" class="form-control"  required="required" data-error="Lastname is required.">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="form_name">Floor *</label>
+                                            <input id="form_name" type="text" name="name" class="form-control"  required="required" data-error="Firstname is required.">
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="form_lastname">Standard *</label>
+                                            <input id="form_lastname" type="text" name="surname" class="form-control"  required="required" data-error="Lastname is required.">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="form_name">Price *</label>
+                                            <input id="form_name" type="text" name="name" class="form-control"  required="required" data-error="Firstname is required.">
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="form_lastname">Number of People *</label>
+                                            <input id="form_lastname" type="text" name="surname" class="form-control"  required="required" data-error="Lastname is required.">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="form_email">Swimming Pool Area *</label>
+                                            <input id="form_email" type="email" name="email" class="form-control"  required="required" data-error="Valid email is required.">
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="form_need">Type of Rent *</label>
+                                            <select id="form_need" name="need" class="form-control" required="required" data-error="Please specify your need.">
+                                                <option value="" selected disabled>--Select Type of Rent--</option>
+                                                <option >Year</option>
+                                                <option >Month</option>
+                                                <option >Day</option>
+                                                <option >Hours</option>
+                                            </select>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="form_message">Other Service </label>
+                                            <textarea id="form_message" name="message" class="form-control"  rows="4" required="required" data-error="Please, leave us a message."></textarea
+                                            >
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="col-md-12">
+
+                                        <input type="submit" class="btn btn-success btn-send  pt-2 btn-block
+                            " value="Submit" >
+
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+
+            </div>
+            <!-- /.8 -->
+
+        </div>
+        <!-- /.row-->
+
+    </div>
+</div>
+<div style="background-color: black" class="footer-dark">
+    <footer>
+        <div class="container">
+            <div class="row"><div class="col-md-3 item">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="#">Web design</a></li>
+                    <li><a href="#">Development</a></li>
+                    <li><a href="#">Hosting</a></li>
+                </ul>
+            </div><div class="col-md-3 item">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="#">Web design</a></li>
+                    <li><a href="#">Development</a></li>
+                    <li><a href="#">Hosting</a></li>
+                </ul>
+            </div><div class="col-md-3 item">
+                <h3>About</h3>
+                <ul>
+                    <li><a href="#">Company</a></li>
+                    <li><a href="#">Team</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div><div class="col-md-3 item text">
+                <h3>Furama.com</h3>
+                <p>Visit us for more information and booking our service</p>
+            </div>
+                <div class="col item social"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-youtube"></i></a><a href="#"><i class="fa fa-instagram"></i></a><a href="#"><i class="fa fa-google"></i></a></div>
+            </div>
+            <p class="copyright">Furama.com &copy; James Truong</p>
+        </div>
+    </footer>
+</div>
+</body>
+</html>
