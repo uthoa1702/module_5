@@ -5,15 +5,17 @@
     <title>Title</title>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-<!--    <link rel="stylesheet" href="_bootswatch.scss">-->
-<!--    <link rel="stylesheet" href="_variables.scss">-->
+    <!--    <link rel="stylesheet" href="_bootswatch.scss">-->
+    <!--    <link rel="stylesheet" href="_variables.scss">-->
     <script async src="//jsfiddle.net/bootswatch/a3z27pyf/embed/"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../../footer-css.css">
-    <link rel="stylesheet" href="../../../case_study_furama_module_5/src/components/css/css-for-prototype.css">
+    <link rel="stylesheet" href="../case_study_furama_module_5/src/components/css/css-for-prototype.css">
+    <link rel="stylesheet" href="../dich_vu/footer-css.css">
+
+
 </head>
 <style>
     label{
@@ -21,7 +23,7 @@
     }
 </style>
 <body>
-<nav style="background-color: black; color: white" class="navbar navbar-expand-lg  fixed-top"  >
+<nav style="background-color: black; color: white" class="navbar navbar-expand-lg  fixed-top">
     <div  class="container">
         <a style="color: white" class="navbar-brand" href="#"><img style="height: 45px;padding: 5px; width: 200px" src="https://www.furama.com/images/LOGOFHI_4C_Reverse.png" alt=""></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -48,7 +50,7 @@
 <div style="padding: 100px" class="container">
     <div class=" text-center mt-5 ">
 
-        <h1 >Create Villa Form</h1>
+        <h1 >Create Contract Form</h1>
 
     </div>
 
@@ -68,65 +70,51 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="form_name">Villa Name *</label>
-                                            <input id="form_name" type="text" name="name" class="form-control"  required="required" data-error="Firstname is required.">
+                                            <label for="form_name">Start Date *</label>
+                                            <input id="form_name" type="date" name="name" class="form-control"  required="required" data-error="Firstname is required.">
 
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="form_lastname">Area *</label>
-                                            <input id="form_lastname" type="text" name="surname" class="form-control"  required="required" data-error="Lastname is required.">
+                                            <label for="form_lastname">End Date *</label>
+                                            <input id="form_lastname" type="date" name="surname" class="form-control"  required="required" data-error="Lastname is required.">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="form_name">Floor *</label>
-                                            <input id="form_name" type="text" name="name" class="form-control"  required="required" data-error="Firstname is required.">
+                                            <label for="form_name">Deposit *</label>
+                                            <input id="form_name" type="number" name="name" class="form-control"  required="required" data-error="Firstname is required.">
 
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="form_lastname">Standard *</label>
-                                            <input id="form_lastname" type="text" name="surname" class="form-control"  required="required" data-error="Lastname is required.">
+                                            <label for="form_lastname">Total *</label>
+                                            <input id="form_lastname" type="number" name="surname" class="form-control"  required="required" data-error="Lastname is required.">
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="form_name">Price *</label>
-                                            <input id="form_name" type="text" name="name" class="form-control"  required="required" data-error="Firstname is required.">
 
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="form_lastname">Number of People *</label>
-                                            <input id="form_lastname" type="text" name="surname" class="form-control"  required="required" data-error="Lastname is required.">
-                                        </div>
-                                    </div>
-                                </div>
                                 <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="form_email">Swimming Pool Area *</label>
-                                            <input id="form_email" type="email" name="email" class="form-control"  required="required" data-error="Valid email is required.">
+                                    <!--                                    <div class="col-md-6">-->
+                                    <!--                                        <div hidden class="form-group">-->
+                                    <!--                                            <label for="form_email">Swimming Pool Area *</label>-->
+                                    <!--                                            <input id="form_email" type="email" name="email" class="form-control"  required="required" data-error="Valid email is required.">-->
 
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
+                                    <!--                                        </div>-->
+                                    <!--                                    </div>-->
+                                    <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="form_need">Type of Rent *</label>
+                                            <label for="form_need">Type of Service *</label>
                                             <select id="form_need" name="need" class="form-control" required="required" data-error="Please specify your need.">
-                                                <option value="" selected disabled>--Select Type of Rent--</option>
-                                                <option >Year</option>
-                                                <option >Month</option>
-                                                <option >Day</option>
-                                                <option >Hours</option>
+                                                <option value="" selected disabled>--Select Type of Customer--</option>
+                                                <option >Diamond</option>
+                                                <option >Gold</option>
+                                                <option >Silver</option>
+                                                <option >Member</option>
                                             </select>
 
                                         </div>
@@ -134,11 +122,11 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label for="form_message">Other Service </label>
-                                            <textarea id="form_message" name="message" class="form-control"  rows="4" required="required" data-error="Please, leave us a message."></textarea
-                                            >
-                                        </div>
+<!--                                        <div class="form-group">-->
+<!--                                            <label for="form_message">Address</label>-->
+<!--                                            <textarea id="form_message" name="message" class="form-control"  rows="4" required="required" data-error="Please, leave us a message."></textarea-->
+<!--                                            >-->
+<!--                                        </div>-->
 
                                     </div>
 
