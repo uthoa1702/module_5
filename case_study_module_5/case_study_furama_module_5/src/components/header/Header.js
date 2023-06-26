@@ -1,5 +1,6 @@
 
 import '../css/css-for-prototype.css';
+import {Link} from "react-router-dom";
 
 
 
@@ -12,13 +13,13 @@ export function Header() {
                 className="navbar navbar-expand-lg  fixed-top"
             >
                 <div className="container">
-                    <a style={{ color: "white" }} className="navbar-brand" href="#">
+                    <Link style={{ color: "white" }} className="navbar-brand" to="/">
                         <img
                             style={{ height: 45, padding: 5, width: 200 }}
                             src="https://www.furama.com/images/LOGOFHI_4C_Reverse.png"
                             alt=""
                         />
-                    </a>
+                    </Link>
                     <button
                         className="navbar-toggler"
                         type="button"
@@ -33,24 +34,24 @@ export function Header() {
                     <div className="collapse navbar-collapse" id="navbarResponsive">
                         <ul className="navbar-nav ms-auto">
                             <li className="nav-item active">
-                                <a style={{ color: "white" }} className="nav-link" href="#">
+                                <Link style={{ color: "white" }} className="nav-link" to="/">
                                     Home
-                                </a>
+                                </Link>
                             </li>
                             <li className="nav-item">
-                                <a style={{ color: "white" }} className="nav-link" href="#">
-                                    About
-                                </a>
+                                <Link style={{ color: "white" }} className="nav-link" to="/customers">
+                                    Customers
+                                </Link>
                             </li>
                             <li className="nav-item">
-                                <a style={{ color: "white" }} className="nav-link" href="#">
-                                    Services
-                                </a>
+                                <Link style={{ color: "white" }} className="nav-link" to="/addService">
+                                    Add Service
+                                </Link>
                             </li>
                             <li className="nav-item">
-                                <a style={{ color: "white" }} className="nav-link" href="#">
-                                    Contact
-                                </a>
+                                <Link style={{ color: "white" }} className="nav-link" to="/contracts">
+                                    Contract
+                                </Link>
                             </li>
                         </ul>
                     </div>

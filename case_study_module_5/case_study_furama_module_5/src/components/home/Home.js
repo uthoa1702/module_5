@@ -3,8 +3,7 @@ import '../css/css-pagination.css'
 import React from "react";
 import {Footer} from "../footer/Footer";
 import {SlideHome} from "../header/SlideHome";
-
-
+import {Link} from "react-router-dom";
 
 
 export function Home() {
@@ -14,6 +13,9 @@ export function Home() {
             <section className="py-5">
                 <div style={{ textAlign: "center" }} className="container">
                     <h1 className="fw-light">Our Facilities</h1>
+                    <div>
+                        <Link to='/addService' className="btn btn-dark px-3">Add Service</Link>
+                    </div>
                     <div
                         style={{ width: 330, margin: 10, display: "inline-block" }}
                         className="card"
@@ -42,7 +44,7 @@ export function Home() {
                             </div>
                             <div className="px-2 mt-3">
                                 {" "}
-                                <button className="btn btn-dark px-3">Edit</button>{" "}
+                                <Link to='/UpdateService' className="btn btn-dark px-3">Edit</Link>{" "}
                                 <button className="btn btn-outline-dark px-3">Delete</button>{" "}
                             </div>
                         </div>
