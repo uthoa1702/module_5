@@ -3,7 +3,7 @@ import React from "react";
 
 
 export function Counter2() {
-    const [count, setCount] = useIncrement()
+    const [count, setCount] = useIncrement(0)
 
 
 
