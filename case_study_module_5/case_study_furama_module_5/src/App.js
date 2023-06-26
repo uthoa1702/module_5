@@ -1,14 +1,19 @@
 import './App.css';
 import {Header} from "./components/header/Header";
 import React from "react";
-import {SlideHome} from "./components/header/SlideHome";
-import {Footer} from "./components/footer/Footer";
+import {Route, Routes} from "react-router-dom";
 import {Home} from "./components/home/Home";
+
+
 
 function App() {
     return (
         <>
-            <Home/>
+            <Routes>
+                <Route path="/" element={<Home/>}/>
+                <Route path="/ADDD" element={<Header/>}/>
+            </Routes>
+
         </>
     );
 }

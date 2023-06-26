@@ -1,6 +1,7 @@
 
 import '../css/css-for-prototype.css'
 
+import {Route, Routes} from "react-router-dom";
 
 
 
@@ -51,9 +52,9 @@ return(
                             </a>
                         </li>
                         <li className="nav-item">
-                            <a style={{ color: "white" }} className="nav-link" href="#">
+                            <Link style={{ color: "white" }} className="nav-link" href="#">
                                 Contact
-                            </a>
+                            </Link>
                         </li>
                     </ul>
                 </div>
