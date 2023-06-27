@@ -6,6 +6,9 @@ import {Home} from "./components/home/Home";
 import {AddService} from "./components/service/AddService";
 import {UpdateService} from "./components/service/UpdateService";
 import {CustomerList} from "./components/customers/CustomerList";
+import {CreateCustomer} from "./components/customers/CreateCustomer";
+import {UpdateCustomer} from "./components/customers/UpdateCustomer";
+
 
 
 
@@ -16,8 +19,13 @@ function App() {
                 <Route path="/" element={<Home/>}/>
                 <Route path="/services" element={<Home/>}/>
                 <Route path="/addService" element={<AddService/>}/>
+
                 <Route path="/updateService" element={<UpdateService/>}/>
+
                 <Route path="/customers" element={<CustomerList/>}/>
+                <Route path="/createCustomer" element={<CreateCustomer/>}/>
+
+                <Route path="/updateCustomer" element={<UpdateCustomer/>}/>
             </Routes>
 
         </>

@@ -1,6 +1,7 @@
 import {Header} from "../header/Header";
 import {Footer} from "../footer/Footer";
 import React from "react";
+import {Link} from "react-router-dom";
 
 
 export function CustomerList() {
@@ -14,7 +15,7 @@ export function CustomerList() {
                 >
                     <h1>CUSTOMER LIST</h1>
                 </div>
-                <button className="btn btn-success">Create</button>
+                <Link to='/createCustomer' className="btn btn-success">Create</Link>
                 <table
                     id="example"
                     className="table table-hover table-striped table-bordered"
@@ -41,7 +42,7 @@ export function CustomerList() {
                         <td>0708098364</td>
                         <td>Diamond</td>
                         <td>
-                            <button className="btn btn-warning">Edit</button>
+                            <Link className="btn btn-warning" to='/updateCustomer'>Edit</Link>
                             <button className="btn btn-danger">Delete</button>
                         </td>
                     </tr>

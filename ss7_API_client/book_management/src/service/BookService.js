@@ -1,5 +1,4 @@
 import axios from "axios";
-import data from "bootstrap/js/src/dom/data";
 
 
 export const findAll = async () => {
@@ -28,5 +27,6 @@ export const findById = async (id) => {
         return response.data;
     } catch (error) {
         console.log(error);
+        throw error
     }
 };

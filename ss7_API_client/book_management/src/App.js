@@ -15,7 +15,7 @@ function App() {
         <Routes>
             <Route path='/' element={<Library/>}/>
             <Route path='/addBook' element={<CreateBook/>}/>
-            <Route path='/updateBook/:id' element={<UpdateBook/>}/>
+            <Route path="/updateBook/:id" element={<UpdateBook />}/>
         </Routes>
         <ToastContainer
             position="top-center"
