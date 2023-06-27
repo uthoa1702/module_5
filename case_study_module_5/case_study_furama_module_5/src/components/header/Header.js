@@ -1,6 +1,6 @@
 
 import '../css/css-for-prototype.css';
-import {Link} from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
 
 
 
@@ -34,24 +34,24 @@ export function Header() {
                     <div className="collapse navbar-collapse" id="navbarResponsive">
                         <ul className="navbar-nav ms-auto">
                             <li className="nav-item active">
-                                <Link style={{ color: "white" }} className="nav-link" to="/">
+                                <NavLink style={{ color: "white" }} className="nav-link" to="/">
                                     Home
-                                </Link>
+                                </NavLink>
                             </li>
                             <li className="nav-item">
-                                <Link style={{ color: "white" }} className="nav-link" to="/customers">
+                                <NavLink style={{ color: "white" }} className="nav-link" to="/customers">
                                     Customers
-                                </Link>
+                                </NavLink>
                             </li>
                             <li className="nav-item">
-                                <Link style={{ color: "white" }} className="nav-link" to="/addService">
-                                    Add Service
-                                </Link>
+                                <NavLink style={{ color: "white" }} className="nav-link" to="/services">
+                                    Services
+                                </NavLink>
                             </li>
                             <li className="nav-item">
-                                <Link style={{ color: "white" }} className="nav-link" to="/contracts">
+                                <NavLink style={{ color: "white" }} className="nav-link" to="/contracts">
                                     Contract
-                                </Link>
+                                </NavLink>
                             </li>
                         </ul>
                     </div>

@@ -4,11 +4,13 @@ import React from "react";
 import {Footer} from "../footer/Footer";
 import {SlideHome} from "../header/SlideHome";
 import {Link} from "react-router-dom";
+import {Header} from "../header/Header";
 
 
 export function Home() {
     return (
         <>
+            <Header/>
             <SlideHome/>
             <section className="py-5">
                 <div style={{ textAlign: "center" }} className="container">
