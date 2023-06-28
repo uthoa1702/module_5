@@ -1,0 +1,100 @@
+{
+  "house": [
+    {
+      "id": 1,
+      "name": "3 Bedroom 3 Bathroom Luxury Home in Delray Beach",
+      "area": 50,
+      "price": 1000,
+      "max": 5,
+      "typeOfRent": "Year",
+      "standard": "Standard",
+      "otherService": "none",
+      "floor": 3,
+      "image": "https://homes-and-villas.marriott.com/units-gallery/00/09/D8/image_164332469.jpeg?src=0ADBN1wDZYBUFwIigJN3Dmz6g2xWeNAacsqfd2fZiZlg=&imwidth=800"
+    } ,
+    {
+      "id": 2,
+      "name": "5 Bedroom 4 Bathroom Heated Pool with Hot Tub ",
+      "area": 50,
+      "price": 600,
+      "max": 10,
+      "typeOfRent": "Year",
+      "standard": "Standard",
+      "otherService": "none",
+      "floor": 3,
+      "image": "https://homes-and-villas.marriott.com/units-gallery/00/07/EF/image_161022335.jpeg?src=0ADBN1wDZYBUFwIigJN3Dmz6g2xWeNAacsqfd2fZiZlg=&imwidth=800"
+    },
+    {
+      "id": 3,
+      "name": "5 Bedroom 4 Bathroom Heated Pool with Hot Tub ",
+      "area": 50,
+      "price": 500,
+      "max": 10,
+      "typeOfRent": "Year",
+      "standard": "Standard",
+      "otherService": "none",
+      "floor": 3,
+      "image": "https://homes-and-villas.marriott.com/units-gallery/00/07/EF/image_161022335.jpeg?src=0ADBN1wDZYBUFwIigJN3Dmz6g2xWeNAacsqfd2fZiZlg=&imwidth=800"
+    },
+    {
+      "id": 4,
+      "name": "5 Bedroom 4 Bathroom Heated Pool with Hot Tub ",
+      "area": 50,
+      "price": 500,
+      "max": 10,
+      "typeOfRent": "Year",
+      "standard": "Standard",
+      "otherService": "none",
+      "floor": 3,
+      "image": "https://homes-and-villas.marriott.com/units-gallery/00/07/EF/image_161022335.jpeg?src=0ADBN1wDZYBUFwIigJN3Dmz6g2xWeNAacsqfd2fZiZlg=&imwidth=800"
+    },{
+      "id": 5,
+      "name": "5 Bedroom 4 Bathroom Heated Pool with Hot Tub ",
+      "area": 50,
+      "price": 500,
+      "max": 10,
+      "typeOfRent": "Year",
+      "standard": "Standard",
+      "otherService": "none",
+      "floor": 3,
+      "image": "https://homes-and-villas.marriott.com/units-gallery/00/07/EF/image_161022335.jpeg?src=0ADBN1wDZYBUFwIigJN3Dmz6g2xWeNAacsqfd2fZiZlg=&imwidth=800"
+    },{
+      "id": 6,
+      "name": "5 Bedroom 4 Bathroom Heated Pool with Hot Tub ",
+      "area": 50,
+      "price": 500,
+      "max": 10,
+      "typeOfRent": "Year",
+      "standard": "Standard",
+      "otherService": "none",
+      "floor": 3,
+      "image": "https://homes-and-villas.marriott.com/units-gallery/00/07/EF/image_161022335.jpeg?src=0ADBN1wDZYBUFwIigJN3Dmz6g2xWeNAacsqfd2fZiZlg=&imwidth=800"
+    }
+  ],
+  "room": [
+    {
+      "id": 1,
+      "name": "W FORT LAUDERDALE",
+      "area": 50,
+      "price": 100,
+      "max": 5,
+      "typeOfRent": "Year",
+      "includedService": "Breakfast",
+      "image": "https://cache.marriott.com/content/dam/marriott-renditions/FLLWH/fllwh-fabulous-5767-hor-clsc.jpg?output-quality=70&interpolation=progressive-bilinear&downsize=1846px:*"
+    }
+  ],
+  "villa": [ {
+    "id": 1,
+    "name": "json-server",
+    "area": 50,
+    "price": 100,
+    "max": 5,
+    "typeOfRent": "Year",
+    "standard": "Standard",
+    "otherService": "none",
+    "floor": 3,
+    "poolArea": 20,
+    "image": "https://cache.marriott.com/content/dam/marriott-renditions/FLLWH/fllwh-fabulous-5767-hor-clsc.jpg?output-quality=70&interpolation=progressive-bilinear&downsize=1846px:*"
+
+  }]
+}

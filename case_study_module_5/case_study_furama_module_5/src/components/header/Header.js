@@ -44,9 +44,19 @@ export function Header() {
                                 </NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink style={{ color: "white" }} className="nav-link" to="/services">
-                                    Services
-                                </NavLink>
+                                {/*<NavLink style={{ color: "white" }} className="nav-link" to="/services">*/}
+                                {/*    Services*/}
+                                {/*</NavLink>*/}
+
+                                <div className="dropdown">
+                                    <button className="drop btn" style={{color:"white"}}>Services</button>
+                                    <div className="dropdown-content">
+                                        <NavLink to="/houses">Houses</NavLink>
+                                        <NavLink to="/rooms">Rooms</NavLink>
+                                        <NavLink to="/villas">Villas</NavLink>
+
+                                    </div>
+                                </div>
                             </li>
                             <li className="nav-item">
                                 <NavLink style={{ color: "white" }} className="nav-link" to="/contracts">
