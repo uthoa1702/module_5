@@ -4,6 +4,7 @@ import * as bookService from '../service/BookService';
 import {useNavigate} from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css'
 import {useParams} from "react-router-dom";
+import {toast} from "react-toastify";
 
 export function UpdateBook() {
 
@@ -12,43 +13,44 @@ export function UpdateBook() {
     const navigate = useNavigate()
     const param = useParams()
 
-    console.log(param)
-    let r = bookService.findById(param)
-    console.log("asdasd"+r)
+
 
     useEffect(() => {
         const findById = async () => {
-        const result = await bookService.findById(param)
-            setBook( result.data)
-            console.log(result.data)
+        const result = await bookService.findById(param.id)
+            setBook(result)
+            console.log(result)
 
         }
         findById()
-    },[param.id])
+    },[])
     console.log(book)
-    const handleSubmit = async (values) => {
-        try {
+    // const handleSubmit = async (values) => {
+    //     try {
+    //
+    //         await bookService.save(values)
+    //         navigate("/")
+    //     } catch (error) {
+    //         console.log(error)
+    //     }
+    //
+    // };
 
-            await bookService.save(values)
-            navigate("/")
-        } catch (error) {
-            console.log(error)
-        }
-
-    };
-
-
+if (!book){
+    return null
+}
     return (
         <Formik
             initialValues={{
+                id: book.id,
                 title: book.title ,
                 quantity: book.quantity
             }}
             onSubmit={(values, {setSubmitting}) => {
                 setSubmitting(false)
                 const update = async () => {
-                    // await bookService.update(values)
-                    // toast.success(<h2>Update Success</h2>)
+                    await bookService.update(values)
+                    toast(`ok`)
                     navigate("/")
                 }
                 update();
