@@ -4,27 +4,25 @@ import {Field, Form, Formik} from "formik";
 import {toast} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css'
 import {ColorRing} from "react-loader-spinner";
+import * as service from './service/ToDoService'
 
 
 export function ToDoList() {
 
 
     const [thingsToDo, setThingsToDo] = useState([]);
+    const fetchData = async () => {
+        const re = await service.getThings();
+        setThingsToDo(re);
+    };
 
-    useEffect(()=>{
-        getThings();
-    },[thingsToDo]);
+    useEffect(() => {
+        fetchData();
+    }, [thingsToDo]);
 
 
-    const getThings = async () => {
-        try {
-            const result = await axios.get('http://localhost:8080/things')
-            setThingsToDo(result.data)
-        }catch (e) {
-            console.error('loi roi dai vuong oi',e)
-        }
 
-    }
+
 
 
     return(

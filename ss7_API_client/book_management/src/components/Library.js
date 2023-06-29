@@ -19,16 +19,16 @@ const [books,setBook] = useState([]);
         const result=await bookService.findAll();
         setBook(result);
     }
-    const prop=async (id,name)=>{
+    const deleteInfor=async (id,name)=>{
         setIdDelete(id)
         setNameDelete(name)
     }
-
-useEffect(() => {
     const fetchApi = async () => {
         const result = await bookService.findAll()
         setBook(result)
     }
+useEffect(() => {
+
     fetchApi()
 },[])
 
@@ -64,7 +64,7 @@ useEffect(() => {
                             <td>{book.quantity}</td>
                             <td>
                                 <Link className='btn btn-warning'  to={`/updateBook/${book.id}`}>Edit</Link>
-                                <button style={{marginLeft:"10px"}} type="button" className="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={()=>prop(book.id,book.title)}>
+                                <button style={{marginLeft:"10px"}} type="button" className="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={()=>deleteInfor(book.id,book.title)}>
                                     Delete
                                 </button>
                             </td>
