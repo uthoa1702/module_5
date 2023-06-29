@@ -10,6 +10,7 @@ import {CreateCustomer} from "./components/customers/CreateCustomer";
 import {UpdateCustomer} from "./components/customers/UpdateCustomer";
 import {Room} from "./components/room/Room";
 import {Villa} from "./components/villa/Villa";
+import {ToastContainer} from "react-toastify";
 
 
 
@@ -22,7 +23,7 @@ function App() {
                 <Route path="/services" element={<House/>}/>
                 <Route path="/addService" element={<AddHouse/>}/>
 
-                <Route path="/updateService" element={<UpdateHouse/>}/>
+                <Route path="/updateHouse/:id" element={<UpdateHouse/>}/>
 
                 <Route path="/customers" element={<CustomerList/>}/>
                 <Route path="/createCustomer" element={<CreateCustomer/>}/>
@@ -32,6 +33,7 @@ function App() {
                 <Route path="/rooms" element={<Room/>}/>
                 <Route path="/villas" element={<Villa/>}/>
             </Routes>
+            <ToastContainer/>
 
         </>
     );

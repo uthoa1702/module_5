@@ -8,14 +8,14 @@ import {Header} from "../header/Header";
 import * as villaService from "../service/VillaService"
 
 export function Villa() {
-    const [villas,setVilla] = useState([])
+    const [villas, setVilla] = useState([])
     useEffect(() => {
         const showList = async () => {
             const villas = await villaService.findAll()
             setVilla(villas)
         }
         showList()
-    },[])
+    }, [])
 
 // if(!villas.isArray) return  null;
 
@@ -25,24 +25,22 @@ export function Villa() {
             <SlideHome/>
             <section className="py-5">
 
-                <div style={{ textAlign: "center" }} className="container">
+                <div style={{textAlign: "center"}} className="container">
                     <h1 className="fw-light">Our Villas</h1>
                     <div>
                         <Link to='/addService' className="btn btn-dark px-3">Add Service</Link>
                     </div>
 
 
-
                     {
                         villas.map((villa) => (
 
 
-
                             <div key={villa.id}
-                                 style={{ width: 330, margin: 10, display: "inline-block" }}
+                                 style={{width: 330, margin: 10, display: "inline-block"}}
                                  className="card"
                             >
-                                <div style={{ textAlign: "left" }} className="inner-card">
+                                <div style={{textAlign: "left"}} className="inner-card">
                                     {" "}
                                     <img
                                         src={villa.image}
@@ -51,7 +49,7 @@ export function Villa() {
                                     <div className="d-flex justify-content-between align-items-center mt-3 px-2">
                                         <h4>{villa.name} </h4>{" "}
                                         <span className="heart">
-            <i className="fa fa-heart" />
+            <i className="fa fa-heart"/>
           </span>
                                     </div>
                                     <div className="mt-2 px-2">
@@ -62,12 +60,13 @@ export function Villa() {
                                         </small>{" "}
                                     </div>
                                     <div className="px-2">
-                                        <h3>  $ {villa.price}</h3>
+                                        <h3> $ {villa.price}</h3>
                                     </div>
                                     <div className="px-2 mt-3">
                                         {" "}
                                         <Link to='/UpdateHouse' className="btn btn-dark px-3">Edit</Link>{" "}
-                                        <button className="btn btn-outline-dark px-3">Delete</button>{" "}
+                                        <button className="btn btn-outline-dark px-3">Delete</button>
+                                        {" "}
                                     </div>
                                 </div>
                             </div>
@@ -92,7 +91,7 @@ export function Villa() {
                                                 <ul className="pagination d-flex justify-content-center flex-wrap pagination-rounded-flat pagination-success">
                                                     <li className="page-item">
                                                         <a className="page-link" href="#" data-abc="true">
-                                                            <i className="fa fa-angle-left" />
+                                                            <i className="fa fa-angle-left"/>
                                                         </a>
                                                     </li>
                                                     <li className="page-item active">
@@ -117,7 +116,7 @@ export function Villa() {
                                                     </li>
                                                     <li className="page-item">
                                                         <a className="page-link" href="#" data-abc="true">
-                                                            <i className="fa fa-angle-right" />
+                                                            <i className="fa fa-angle-right"/>
                                                         </a>
                                                     </li>
                                                 </ul>

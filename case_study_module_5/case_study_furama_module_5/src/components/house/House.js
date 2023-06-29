@@ -66,7 +66,7 @@ const [houses,setHouse] = useState()
                             </div>
                             <div className="px-2 mt-3">
                                 {" "}
-                                <Link to='/UpdateHouse' className="btn btn-dark px-3">Edit</Link>{" "}
+                                <Link to={`/updateHouse/${house.id}`} className="btn btn-dark px-3">Edit</Link>{" "}
                                 <button className="btn btn-outline-dark px-3">Delete</button>{" "}
                             </div>
                         </div>
