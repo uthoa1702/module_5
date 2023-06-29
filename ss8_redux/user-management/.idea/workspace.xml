@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e4ba32c5-b334-433d-91f6-88ab2f02d0d0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../case_study_module_5/case_study_furama_module_5/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../case_study_module_5/case_study_furama_module_5/db.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study_module_5/case_study_furama_module_5/src/components/house/UpdateHouse.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../case_study_module_5/case_study_furama_module_5/src/components/house/UpdateHouse.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study_module_5/case_study_furama_module_5/src/components/service/HouseService.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../case_study_module_5/case_study_furama_module_5/src/components/service/HouseService.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="2RsaWOPcgwBJkR94Y9s0MOXvjMn" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../ss7_API_client/book_management" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e4ba32c5-b334-433d-91f6-88ab2f02d0d0" name="Default Changelist" comment="" />
+      <created>1688041273282</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1688041273282</updated>
+      <workItem from="1688041274751" duration="34000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1688041306978">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1688041306978" />
+  </component>
+</project>

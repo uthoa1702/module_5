@@ -1,18 +1,6 @@
 {
   "house": [
     {
-      "id": 1,
-      "name": "3 Bedroom 3 Bathroom Luxury Home in Delray Beach",
-      "area": 50,
-      "price": 1000,
-      "max": 5,
-      "typeOfRent": "Year",
-      "standard": "Standard",
-      "otherService": "none",
-      "floor": 3,
-      "image": "https://homes-and-villas.marriott.com/units-gallery/00/09/D8/image_164332469.jpeg?src=0ADBN1wDZYBUFwIigJN3Dmz6g2xWeNAacsqfd2fZiZlg=&imwidth=800"
-    },
-    {
       "id": 2,
       "name": "5 Bedroom 4 Bathroom Heated Pool with Hot Tub ",
       "area": 50,
@@ -73,40 +61,28 @@
       "image": "https://homes-and-villas.marriott.com/units-gallery/00/07/EF/image_161022335.jpeg?src=0ADBN1wDZYBUFwIigJN3Dmz6g2xWeNAacsqfd2fZiZlg=&imwidth=800"
     },
     {
-      "name": "123",
+      "id": 15,
+      "name": "3 Bedroom 3 Bathroom Luxury Home in Delray Beach",
+      "area": 50,
+      "price": 123123123,
+      "max": 5,
+      "typeOfRent": "Year",
+      "standard": "Standard",
+      "otherService": "none",
+      "floor": "4",
+      "image": "https://homes-and-villas.marriott.com/units-gallery/00/09/D8/image_164332469.jpeg?src=0ADBN1wDZYBUFwIigJN3Dmz6g2xWeNAacsqfd2fZiZlg=&imwidth=800"
+    },
+    {
+      "name": "sad",
       "area": "123",
       "price": 123,
       "max": "123",
       "typeOfRent": "year",
       "standard": "123",
-      "otherService": "123",
+      "otherService": "",
       "floor": "123",
-      "image": "",
-      "id": 11
-    },
-    {
-      "name": "Trương Quốc Hòa",
-      "area": "123",
-      "price": 123,
-      "max": "123",
-      "typeOfRent": "",
-      "standard": "123",
-      "otherService": "123",
-      "floor": "123",
-      "image": "",
-      "id": 12
-    },
-    {
-      "name": "asdasdasd",
-      "area": "123",
-      "price": 123,
-      "max": "123",
-      "typeOfRent": "month",
-      "standard": "123",
-      "otherService": "123",
-      "floor": "123",
-      "image": "",
-      "id": 13
+      "image": "https://motortrip.vn/wp-content/uploads/2021/08/resort-mui-ne-phan-thiet-6-1.jpg",
+      "id": 16
     }
   ],
   "room": [
@@ -134,6 +110,81 @@
       "floor": 3,
       "poolArea": 20,
       "image": "https://cache.marriott.com/content/dam/marriott-renditions/FLLWH/fllwh-fabulous-5767-hor-clsc.jpg?output-quality=70&interpolation=progressive-bilinear&downsize=1846px:*"
+    }
+  ],
+  "customer": [
+    {
+      "id": 1,
+      "name": "James",
+      "gender": 1,
+      "birthday": 100,
+      "cccd": 5,
+      "typeOfCustomer": 1,
+      "phone": "0123456789",
+      "email": "asd",
+      "address": ""
+    },
+    {
+      "id": 2,
+      "name": "James Truong",
+      "gender": 1,
+      "birthday": 100,
+      "cccd": 5,
+      "typeOfCustomer": 1,
+      "phone": "0123456789",
+      "email": "asd",
+      "address": ""
+    },
+    {
+      "name": "1",
+      "gender": "1",
+      "birthday": "2023-06-05",
+      "cccd": 1,
+      "typeOfCustomer": 4,
+      "phone": 1,
+      "email": "1",
+      "address": "123",
+      "id": 4
+    },
+    {
+      "name": "gold",
+      "gender": "0",
+      "birthday": "2023-06-11",
+      "cccd": 1,
+      "typeOfCustomer": "2",
+      "phone": 1,
+      "email": "1",
+      "address": "",
+      "id": 5
+    },
+    {
+      "id": 6,
+      "name": "ok",
+      "gender": "0",
+      "birthday": "2023-06-12",
+      "cccd": 1,
+      "typeOfCustomer": "3",
+      "phone": 1,
+      "email": "1",
+      "address": ""
+    }
+  ],
+  "customerType": [
+    {
+      "id": 1,
+      "name": "Diamond"
+    },
+    {
+      "id": 2,
+      "name": "Gold"
+    },
+    {
+      "id": 3,
+      "name": "Silver"
+    },
+    {
+      "id": 4,
+      "name": "Member"
     }
   ]
 }

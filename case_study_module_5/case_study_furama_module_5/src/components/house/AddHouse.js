@@ -4,13 +4,10 @@ import React from "react";
 import {ErrorMessage, Field, Form, Formik} from "formik";
 import * as houseService from '../service/HouseService.js'
 import {useNavigate} from "react-router-dom";
-import {toast} from "react-toastify";
 import * as yup from 'yup'
 import '../css/css-form.css'
 import 'react-toastify/dist/ReactToastify.css';
-
-
-
+import * as Swal from "sweetalert2";
 
 
 export function AddHouse() {
@@ -22,7 +19,7 @@ export function AddHouse() {
             <Header/>
 
 
-            <div style={{padding: 100}} className="container">
+            <div style={{padding: 100}} className="">
                 <div className=" text-center mt-5 ">
                     <h1>Create House Form</h1>
                 </div>
@@ -50,14 +47,22 @@ export function AddHouse() {
                                                 floor: yup.number().required('Need to be filled').min(1),
                                                 price: yup.number().required('Need to be filled').min(0),
                                                 max: yup.number().required('Need to be filled').min(0),
-                                                typeOfRent : yup.string().required("Need to choose")
+                                                typeOfRent: yup.string().required("Need to be chosen")
 
                                             })}
                                             onSubmit={((values) => {
                                                 const res = async () => {
                                                     const result = await houseService.save(values)
-                                                    await toast.success(`Created ${result.name} successfully!`)
                                                     await navigate('/houses')
+
+                                                    // await toast.success(`Created ${result.name} successfully!`)
+                                                    await Swal.fire({
+                                                        title: 'Success',
+                                                        text: 'Created a new House successfully',
+                                                        icon: 'success',
+                                                        confirmButtonText: 'OK'
+                                                    });
+
                                                 }
                                                 res()
                                             })}>
@@ -66,7 +71,7 @@ export function AddHouse() {
                                                 <div className="row">
                                                     <div className="col-md-6">
                                                         <div className="form-group">
-                                                            <label htmlFor="form_name">Name *</label>
+                                                            <label htmlFor="form_name">Name <span>*</span></label>
                                                             <Field
                                                                 id="form_name"
                                                                 type="text"
@@ -74,12 +79,12 @@ export function AddHouse() {
                                                                 className="form-control"
                                                                 data-error="Firstname is required."
                                                             />
-                                                            <ErrorMessage  name='name' component='span'/>
+                                                            <ErrorMessage name='name' component='span'/>
                                                         </div>
                                                     </div>
                                                     <div className="col-md-6">
                                                         <div className="form-group">
-                                                            <label htmlFor="form_lastname">Area *</label>
+                                                            <label htmlFor="form_lastname">Area <span>*</span></label>
                                                             <Field
                                                                 id="form_lastname"
                                                                 type="text"
@@ -87,14 +92,14 @@ export function AddHouse() {
                                                                 className="form-control"
                                                                 data-error="Lastname is required."
                                                             />
-                                                            <ErrorMessage  name='area' component='span'/>
+                                                            <ErrorMessage name='area' component='span'/>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div className="row">
                                                     <div className="col-md-6">
                                                         <div className="form-group">
-                                                            <label htmlFor="form_name">Floor *</label>
+                                                            <label htmlFor="form_name">Floor <span>*</span></label>
                                                             <Field
                                                                 id="form_name"
                                                                 type="text"
@@ -102,12 +107,12 @@ export function AddHouse() {
                                                                 className="form-control"
                                                                 data-error="Firstname is required."
                                                             />
-                                                            <ErrorMessage  name='floor' component='span'/>
+                                                            <ErrorMessage name='floor' component='span'/>
                                                         </div>
                                                     </div>
                                                     <div className="col-md-6">
                                                         <div className="form-group">
-                                                            <label htmlFor="form_lastname">Standard *</label>
+                                                            <label htmlFor="form_lastname">Standard <span>*</span></label>
                                                             <Field
                                                                 id="form_lastname"
                                                                 type="text"
@@ -121,7 +126,7 @@ export function AddHouse() {
                                                 <div className="row">
                                                     <div className="col-md-6">
                                                         <div className="form-group">
-                                                            <label htmlFor="form_name">Price *</label>
+                                                            <label htmlFor="form_name">Price <span>*</span></label>
                                                             <Field
                                                                 id="form_name"
                                                                 type="number"
@@ -129,12 +134,12 @@ export function AddHouse() {
                                                                 className="form-control"
                                                                 data-error="Firstname is required."
                                                             />
-                                                            <ErrorMessage  name='price' component='span'/>
+                                                            <ErrorMessage name='price' component='span'/>
                                                         </div>
                                                     </div>
                                                     <div className="col-md-6">
                                                         <div className="form-group">
-                                                            <label htmlFor="form_lastname">Number of People *</label>
+                                                            <label htmlFor="form_lastname">Number of People <span>*</span></label>
                                                             <Field
                                                                 id="form_lastname"
                                                                 type="text"
@@ -142,7 +147,7 @@ export function AddHouse() {
                                                                 className="form-control"
                                                                 data-error="Lastname is required."
                                                             />
-                                                            <ErrorMessage  name='max' component='span'/>
+                                                            <ErrorMessage name='max' component='span'/>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -155,7 +160,7 @@ export function AddHouse() {
                                                     {/*                                    </div>*/}
                                                     <div className="col-md-12">
                                                         <div className="form-group">
-                                                            <label htmlFor="form_need">Type of Rent *</label>
+                                                            <label htmlFor="form_need">Type of Rent <span>*</span></label>
                                                             <Field as='select'
                                                                    id="form_need"
                                                                    name="typeOfRent"
@@ -170,7 +175,21 @@ export function AddHouse() {
                                                                 <option value="day">Day</option>
                                                                 <option value="hour">Hours</option>
                                                             </Field>
-                                                            <ErrorMessage  name='typeOfRent' component='span'/>
+                                                            <ErrorMessage name='typeOfRent' component='span'/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className='row'>
+                                                    <div className="col-md-12">
+                                                        <div className="form-group">
+                                                            <label htmlFor="form_lastname">Image <span>*</span></label>
+                                                            <Field
+                                                                id="form_lastname"
+                                                                type="text"
+                                                                name="image"
+                                                                className="form-control"
+                                                                data-error="Lastname is required."
+                                                            />
                                                         </div>
                                                     </div>
                                                 </div>

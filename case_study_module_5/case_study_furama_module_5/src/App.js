@@ -28,12 +28,11 @@ function App() {
                 <Route path="/customers" element={<CustomerList/>}/>
                 <Route path="/createCustomer" element={<CreateCustomer/>}/>
 
-                <Route path="/updateCustomer" element={<UpdateCustomer/>}/>
+                <Route path="/updateCustomer/:id" element={<UpdateCustomer/>}/>
                 <Route path="/houses" element={<House/>}/>
                 <Route path="/rooms" element={<Room/>}/>
                 <Route path="/villas" element={<Villa/>}/>
             </Routes>
-            <ToastContainer/>
 
         </>
     );

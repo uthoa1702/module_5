@@ -6,17 +6,51 @@ import {SlideHome} from "../header/SlideHome";
 import {Link} from "react-router-dom";
 import {Header} from "../header/Header";
 import * as houseService from "../service/HouseService"
+import * as Swal from "sweetalert2";
 
 export function House() {
-const [houses,setHouse] = useState()
-    useEffect(() => {
-        const showList = async () => {
-            const houses = await houseService.findAll()
-            setHouse(houses)
-        }
-        showList()
-    },[])
+    const [houses, setHouse] = useState()
 
+
+    const showList = async () => {
+        const houses = await houseService.findAll()
+        setHouse(houses)
+    }
+
+    // showing list
+    useEffect(() => {
+
+        showList()
+    }, [])
+
+    if (!houses) {
+        return null
+    }
+
+
+    // delete item
+    const deleteHouseConfirmation = (id, name) => {
+        Swal.fire({
+            title: 'Confirmation',
+            text: `Are you sure to remove ${name} ?`,
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Delete',
+            cancelButtonColor: '#6d6d6d',
+            confirmButtonColor: '#ff0000',
+
+            cancelButtonText: 'Cancel',
+        }).then(async (result) => {
+            if (result.isConfirmed) {
+                await houseService.deleteById(id)
+                await showList()
+                await Swal.fire('Deleted!', `Removed ${name}.`, 'success');
+
+
+            }
+        })
+
+    }
 
 
     return (
@@ -25,52 +59,54 @@ const [houses,setHouse] = useState()
             <SlideHome/>
             <section className="py-5">
 
-                <div style={{ textAlign: "center" }} className="container">
+                <div style={{textAlign: "center"}} className="container">
                     <h1 className="fw-light">Our Houses</h1>
                     <div>
                         <Link to='/addService' className="btn btn-dark px-3">Add Service</Link>
                     </div>
 
 
-
                     {
-                      houses &&  houses.map((house) => (
+                        houses && houses.map((house) => (
 
 
-
-                    <div key={house.id}
-                        style={{ width: 330, margin: 10, display: "inline-block" }}
-                        className="card"
-                    >
-                        <div style={{ textAlign: "left" }} className="inner-card">
-                            {" "}
-                            <img
-                                src={house.image}
-                                className="img-fluid rounded"
-                            />
-                            <div className="d-flex justify-content-between align-items-center mt-3 px-2">
-                                <h4>{house.name} </h4>{" "}
-                                <span className="heart">
-            <i className="fa fa-heart" />
+                            <div key={house.id}
+                                 style={{width: 330, margin: 10, display: "inline-block"}}
+                                 className="card"
+                            >
+                                <div style={{textAlign: "left"}} className="inner-card">
+                                    {" "}
+                                    <img
+                                        src={house.image}
+                                        className="img-fluid rounded"
+                                    />
+                                    <div className="d-flex justify-content-between align-items-center mt-3 px-2">
+                                        <h4>{house.name} </h4>{" "}
+                                        <span className="heart">
+            <i className="fa fa-heart"/>
           </span>
+                                    </div>
+                                    <div className="mt-2 px-2">
+                                        {" "}
+                                        <small>
+                                            {house.otherService}
+                                        </small>{" "}
+                                    </div>
+                                    <div className="px-2">
+                                        <h3> $ {house.price}</h3>
+                                    </div>
+                                    <div className="px-2 mt-3">
+                                        {" "}
+                                        <Link to={`/updateHouse/${house.id}`}
+                                              className="btn btn-dark px-3">Edit</Link>{" "}
+                                        <button className="btn btn-outline-dark px-3" onClick={() => {
+                                            deleteHouseConfirmation(house.id, house.name)
+                                        }}>Delete
+                                        </button>
+                                        {" "}
+                                    </div>
+                                </div>
                             </div>
-                            <div className="mt-2 px-2">
-                                {" "}
-                                <small>
-                                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                                    accusantium doloremque laudantium
-                                </small>{" "}
-                            </div>
-                            <div className="px-2">
-                                <h3>  $ {house.price}</h3>
-                            </div>
-                            <div className="px-2 mt-3">
-                                {" "}
-                                <Link to={`/updateHouse/${house.id}`} className="btn btn-dark px-3">Edit</Link>{" "}
-                                <button className="btn btn-outline-dark px-3">Delete</button>{" "}
-                            </div>
-                        </div>
-                    </div>
 
 
                         ))
@@ -92,7 +128,7 @@ const [houses,setHouse] = useState()
                                                 <ul className="pagination d-flex justify-content-center flex-wrap pagination-rounded-flat pagination-success">
                                                     <li className="page-item">
                                                         <a className="page-link" href="#" data-abc="true">
-                                                            <i className="fa fa-angle-left" />
+                                                            <i className="fa fa-angle-left"/>
                                                         </a>
                                                     </li>
                                                     <li className="page-item active">
@@ -117,7 +153,7 @@ const [houses,setHouse] = useState()
                                                     </li>
                                                     <li className="page-item">
                                                         <a className="page-link" href="#" data-abc="true">
-                                                            <i className="fa fa-angle-right" />
+                                                            <i className="fa fa-angle-right"/>
                                                         </a>
                                                     </li>
                                                 </ul>
@@ -130,7 +166,7 @@ const [houses,setHouse] = useState()
                     </div>
                 </div>
             </section>
-<Footer/>
+            <Footer/>
         </>
     )
 

@@ -1,6 +1,6 @@
 import {Header} from "../header/Header";
 import {Footer} from "../footer/Footer";
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {ErrorMessage, Field, Form, Formik} from "formik";
 import * as houseService from '../service/HouseService.js'
 import {useNavigate} from "react-router-dom";
@@ -11,12 +11,23 @@ import 'react-toastify/dist/ReactToastify.css';
 import {useParams} from "react-router-dom";
 
 
-
-
-
 export function UpdateHouse() {
     const navigate = useNavigate();
-    const param = useParams()
+    const [house, setHouse] = useState()
+    const params = useParams();
+
+    useEffect(() => {
+        const getHouse = async () => {
+            const result = await houseService.findById(params.id)
+            setHouse(result)
+
+        }
+        getHouse();
+    }, [params.id])
+
+    if (!house) {
+        return null
+    }
 
 
     return (
@@ -24,7 +35,7 @@ export function UpdateHouse() {
             <Header/>
 
 
-            <div style={{padding: 100}} className="container">
+            <div style={{padding: 100}} className="">
                 <div className=" text-center mt-5 ">
                     <h1>Update House Form</h1>
                 </div>
@@ -36,15 +47,16 @@ export function UpdateHouse() {
 
 
                                     <Formik initialValues={{
-                                        name: '',
-                                        area: '',
-                                        price: '',
-                                        max: '',
-                                        typeOfRent: '',
-                                        standard: '',
-                                        otherService: '',
-                                        floor: '',
-                                        image: ''
+                                        id: house.id,
+                                        name: house.name,
+                                        area: house.area,
+                                        price: house.price,
+                                        max: house.max,
+                                        typeOfRent: house.typeOfRent,
+                                        standard: house.standard,
+                                        otherService: house.otherService,
+                                        floor: house.floor,
+                                        image: house.image
                                     }}
                                             validationSchema={yup.object({
                                                 name: yup.string().required('Need to be filled'),
@@ -52,13 +64,13 @@ export function UpdateHouse() {
                                                 floor: yup.number().required('Need to be filled').min(1),
                                                 price: yup.number().required('Need to be filled').min(0),
                                                 max: yup.number().required('Need to be filled').min(0),
-                                                typeOfRent : yup.string().required("Need to choose")
+                                                typeOfRent: yup.string().required("Need to choose")
 
                                             })}
                                             onSubmit={((values) => {
                                                 const res = async () => {
-                                                    const result = await houseService.save(values)
-                                                    await toast.success(`Created ${result.name} successfully!`)
+                                                    const result = await houseService.update(values)
+                                                    await toast.success(`Updated ${result.name} successfully!`)
                                                     await navigate('/houses')
                                                 }
                                                 res()
@@ -74,9 +86,8 @@ export function UpdateHouse() {
                                                                 type="text"
                                                                 name="name"
                                                                 className="form-control"
-                                                                data-error="Firstname is required."
                                                             />
-                                                            <ErrorMessage  name='name' component='span'/>
+                                                            <ErrorMessage name='name' component='span'/>
                                                         </div>
                                                     </div>
                                                     <div className="col-md-6">
@@ -89,7 +100,7 @@ export function UpdateHouse() {
                                                                 className="form-control"
                                                                 data-error="Lastname is required."
                                                             />
-                                                            <ErrorMessage  name='area' component='span'/>
+                                                            <ErrorMessage name='area' component='span'/>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -104,7 +115,7 @@ export function UpdateHouse() {
                                                                 className="form-control"
                                                                 data-error="Firstname is required."
                                                             />
-                                                            <ErrorMessage  name='floor' component='span'/>
+                                                            <ErrorMessage name='floor' component='span'/>
                                                         </div>
                                                     </div>
                                                     <div className="col-md-6">
@@ -131,7 +142,7 @@ export function UpdateHouse() {
                                                                 className="form-control"
                                                                 data-error="Firstname is required."
                                                             />
-                                                            <ErrorMessage  name='price' component='span'/>
+                                                            <ErrorMessage name='price' component='span'/>
                                                         </div>
                                                     </div>
                                                     <div className="col-md-6">
@@ -144,7 +155,7 @@ export function UpdateHouse() {
                                                                 className="form-control"
                                                                 data-error="Lastname is required."
                                                             />
-                                                            <ErrorMessage  name='max' component='span'/>
+                                                            <ErrorMessage name='max' component='span'/>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -172,7 +183,7 @@ export function UpdateHouse() {
                                                                 <option value="day">Day</option>
                                                                 <option value="hour">Hours</option>
                                                             </Field>
-                                                            <ErrorMessage  name='typeOfRent' component='span'/>
+                                                            <ErrorMessage name='typeOfRent' component='span'/>
                                                         </div>
                                                     </div>
                                                 </div>
