@@ -62,7 +62,7 @@ export function House() {
                 <div style={{textAlign: "center"}} className="container">
                     <h1 className="fw-light">Our Houses</h1>
                     <div>
-                        <Link to='/addService' className="btn btn-dark px-3">Add Service</Link>
+                        <Link to='/addHouse' className="btn btn-dark px-3">Create A New House</Link>
                     </div>
 
 

@@ -9,8 +9,13 @@ import {CustomerList} from "./components/customers/CustomerList";
 import {CreateCustomer} from "./components/customers/CreateCustomer";
 import {UpdateCustomer} from "./components/customers/UpdateCustomer";
 import {Room} from "./components/room/Room";
+import {AddRoom} from "./components/room/AddRoom";
 import {Villa} from "./components/villa/Villa";
+import {UpdateVilla} from "./components/villa/UpdateVilla";
 import {ToastContainer} from "react-toastify";
+import {UpdateRoom} from "./components/room/UpdateRoom";
+import {AddVilla} from "./components/villa/AddVilla";
+import {ContractList} from "./components/contracts/ContractList";
 
 
 
@@ -21,9 +26,13 @@ function App() {
             <Routes>
                 <Route path="/" element={<House/>}/>
                 <Route path="/services" element={<House/>}/>
-                <Route path="/addService" element={<AddHouse/>}/>
+                <Route path="/addHouse" element={<AddHouse/>}/>
+                <Route path="/addRoom" element={<AddRoom/>}/>
+                <Route path="/addVilla" element={<AddVilla/>}/>
 
                 <Route path="/updateHouse/:id" element={<UpdateHouse/>}/>
+                <Route path="/updateRoom/:id" element={<UpdateRoom/>}/>
+                <Route path="/updateVilla/:id" element={<UpdateVilla/>}/>
 
                 <Route path="/customers" element={<CustomerList/>}/>
                 <Route path="/createCustomer" element={<CreateCustomer/>}/>
@@ -32,6 +41,7 @@ function App() {
                 <Route path="/houses" element={<House/>}/>
                 <Route path="/rooms" element={<Room/>}/>
                 <Route path="/villas" element={<Villa/>}/>
+                <Route path="/contracts" element={<ContractList/>}/>
             </Routes>
 
         </>

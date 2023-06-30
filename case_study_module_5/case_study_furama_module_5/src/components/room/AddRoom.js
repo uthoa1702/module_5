@@ -1,34 +1,17 @@
 import {Header} from "../header/Header";
 import {Footer} from "../footer/Footer";
-import React, {useEffect, useState} from "react";
+import React from "react";
 import {ErrorMessage, Field, Form, Formik} from "formik";
-import * as houseService from '../service/HouseService.js'
+import * as roomService from '../service/RoomService.js'
 import {useNavigate} from "react-router-dom";
-import {toast} from "react-toastify";
 import * as yup from 'yup'
 import '../css/css-form.css'
 import 'react-toastify/dist/ReactToastify.css';
-import {useParams} from "react-router-dom";
-import Swal from "sweetalert2";
+import * as Swal from "sweetalert2";
 
 
-export function UpdateHouse() {
+export function AddRoom() {
     const navigate = useNavigate();
-    const [house, setHouse] = useState()
-    const params = useParams();
-
-    useEffect(() => {
-        const getHouse = async () => {
-            const result = await houseService.findById(params.id)
-            setHouse(result)
-
-        }
-        getHouse();
-    }, [params.id])
-
-    if (!house) {
-        return null
-    }
 
 
     return (
@@ -38,7 +21,7 @@ export function UpdateHouse() {
 
             <div style={{padding: 100}} className="">
                 <div className=" text-center mt-5 ">
-                    <h1>Update House Form</h1>
+                    <h1>Create Room Form</h1>
                 </div>
                 <div className="row ">
                     <div className="col-lg-7 mx-auto">
@@ -48,38 +31,36 @@ export function UpdateHouse() {
 
 
                                     <Formik initialValues={{
-                                        id: house.id,
-                                        name: house.name,
-                                        area: house.area,
-                                        price: house.price,
-                                        max: house.max,
-                                        typeOfRent: house.typeOfRent,
-                                        standard: house.standard,
-                                        otherService: house.otherService,
-                                        floor: house.floor,
-                                        image: house.image,
-                                        type: house.type
+                                        name: '',
+                                        area: '',
+                                        price: '',
+                                        max: '',
+                                        typeOfRent: '',
+                                        includedService: '',
+                                        image: '',
+                                        type: "Room"
                                     }}
                                             validationSchema={yup.object({
                                                 name: yup.string().required('Need to be filled'),
                                                 area: yup.number().required('Need to be filled').min(0),
-                                                floor: yup.number().required('Need to be filled').min(1),
                                                 price: yup.number().required('Need to be filled').min(0),
                                                 max: yup.number().required('Need to be filled').min(0),
-                                                typeOfRent: yup.string().required("Need to choose")
+                                                typeOfRent: yup.string().required("Need to be chosen")
 
                                             })}
                                             onSubmit={((values) => {
                                                 const res = async () => {
-                                                    const result = await houseService.update(values)
-                                                    // await toast.success(`Updated ${result.name} successfully!`)
-                                                    await navigate('/houses')
+                                                    console.log(values)
+                                                    await roomService.save(values)
+                                                    await navigate('/rooms')
+
                                                     await Swal.fire({
                                                         title: 'Success',
-                                                        text: 'Updated successfully',
+                                                        text: 'Created a new Room successfully',
                                                         icon: 'success',
                                                         confirmButtonText: 'OK'
                                                     });
+
                                                 }
                                                 res()
                                             })}>
@@ -88,19 +69,20 @@ export function UpdateHouse() {
                                                 <div className="row">
                                                     <div className="col-md-6">
                                                         <div className="form-group">
-                                                            <label htmlFor="form_name">Name *</label>
+                                                            <label htmlFor="form_name">Name <span>*</span></label>
                                                             <Field
                                                                 id="form_name"
                                                                 type="text"
                                                                 name="name"
                                                                 className="form-control"
+                                                                data-error="Firstname is required."
                                                             />
                                                             <ErrorMessage name='name' component='span'/>
                                                         </div>
                                                     </div>
                                                     <div className="col-md-6">
                                                         <div className="form-group">
-                                                            <label htmlFor="form_lastname">Area *</label>
+                                                            <label htmlFor="form_lastname">Area <span>*</span></label>
                                                             <Field
                                                                 id="form_lastname"
                                                                 type="text"
@@ -112,50 +94,24 @@ export function UpdateHouse() {
                                                         </div>
                                                     </div>
                                                 </div>
+
                                                 <div className="row">
                                                     <div className="col-md-6">
                                                         <div className="form-group">
-                                                            <label htmlFor="form_name">Floor *</label>
-                                                            <Field
-                                                                id="form_name"
-                                                                type="text"
-                                                                name="floor"
-                                                                className="form-control"
-                                                                data-error="Firstname is required."
-                                                            />
-                                                            <ErrorMessage name='floor' component='span'/>
-                                                        </div>
-                                                    </div>
-                                                    <div className="col-md-6">
-                                                        <div className="form-group">
-                                                            <label htmlFor="form_lastname">Standard *</label>
-                                                            <Field
-                                                                id="form_lastname"
-                                                                type="text"
-                                                                name="standard"
-                                                                className="form-control"
-                                                                data-error="Lastname is required."
-                                                            />
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div className="row">
-                                                    <div className="col-md-6">
-                                                        <div className="form-group">
-                                                            <label htmlFor="form_name">Price *</label>
+                                                            <label htmlFor="form_name">Price <span>*</span></label>
                                                             <Field
                                                                 id="form_name"
                                                                 type="number"
                                                                 name="price"
                                                                 className="form-control"
-                                                                data-error="Firstname is required."
                                                             />
                                                             <ErrorMessage name='price' component='span'/>
                                                         </div>
                                                     </div>
                                                     <div className="col-md-6">
                                                         <div className="form-group">
-                                                            <label htmlFor="form_lastname">Number of People *</label>
+                                                            <label htmlFor="form_lastname">Number of
+                                                                People <span>*</span></label>
                                                             <Field
                                                                 id="form_lastname"
                                                                 type="text"
@@ -176,14 +132,15 @@ export function UpdateHouse() {
                                                     {/*                                    </div>*/}
                                                     <div className="col-md-12">
                                                         <div className="form-group">
-                                                            <label htmlFor="form_need">Type of Rent *</label>
+                                                            <label htmlFor="form_need">Type of
+                                                                Rent <span>*</span></label>
                                                             <Field as='select'
                                                                    id="form_need"
                                                                    name="typeOfRent"
                                                                    className="form-control"
                                                                    data-error="Please specify your need."
                                                             >
-                                                                <option value="" selected="" disabled="">
+                                                                <option value="" >
                                                                     --Select Type of Rent--
                                                                 </option>
                                                                 <option value="year">Year</option>
@@ -195,6 +152,19 @@ export function UpdateHouse() {
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <div className='row'>
+                                                    <div className="col-md-12">
+                                                        <div className="form-group">
+                                                            <label htmlFor="form_lastname">Image <span>*</span></label>
+                                                            <Field
+                                                                id="form_lastname"
+                                                                type="text"
+                                                                name="image"
+                                                                className="form-control"
+                                                            />
+                                                        </div>
+                                                    </div>
+                                                </div>
                                                 <div className="row">
                                                     <div className="col-md-12">
                                                         <div className="form-group">
@@ -202,7 +172,7 @@ export function UpdateHouse() {
                                                             <Field
                                                                 as='textarea'
                                                                 id="form_message"
-                                                                name="otherService"
+                                                                name="includedService"
                                                                 className="form-control"
                                                                 rows={4}
                                                                 data-error="Please, leave us a message."

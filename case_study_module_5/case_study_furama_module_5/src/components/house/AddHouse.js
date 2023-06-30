@@ -39,7 +39,8 @@ export function AddHouse() {
                                         standard: '',
                                         otherService: '',
                                         floor: '',
-                                        image: ''
+                                        image: '',
+                                        type: "House"
                                     }}
                                             validationSchema={yup.object({
                                                 name: yup.string().required('Need to be filled'),

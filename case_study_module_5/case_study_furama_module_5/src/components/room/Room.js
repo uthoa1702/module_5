@@ -6,17 +6,51 @@ import {SlideHome} from "../header/SlideHome";
 import {Link} from "react-router-dom";
 import {Header} from "../header/Header";
 import * as roomService from "../service/RoomService"
+import * as Swal from "sweetalert2";
 
 export function Room() {
-    const [rooms,setRoom] = useState()
-    useEffect(() => {
-        const showList = async () => {
-            const houses = await roomService.findAll()
-            setRoom(houses)
-        }
-        showList()
-    },[])
+    const [rooms, setRoom] = useState()
 
+
+    const showList = async () => {
+        const room = await roomService.findAll()
+        setRoom(room)
+    }
+
+    // showing list
+    useEffect(() => {
+
+        showList()
+    }, [])
+
+    if (!rooms) {
+        return null
+    }
+
+
+    // delete item
+    const deleteConfirmation = (id, name) => {
+        Swal.fire({
+            title: 'Confirmation',
+            text: `Are you sure to remove ${name} ?`,
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Delete',
+            cancelButtonColor: '#6d6d6d',
+            confirmButtonColor: '#ff0000',
+
+            cancelButtonText: 'Cancel',
+        }).then(async (result) => {
+            if (result.isConfirmed) {
+                await roomService.deleteById(id)
+                await showList()
+                await Swal.fire('Deleted!', `Removed ${name}.`, 'success');
+
+
+            }
+        })
+
+    }
 
 
     return (
@@ -25,24 +59,22 @@ export function Room() {
             <SlideHome/>
             <section className="py-5">
 
-                <div style={{ textAlign: "center" }} className="container">
+                <div style={{textAlign: "center"}} className="container">
                     <h1 className="fw-light">Our Rooms</h1>
                     <div>
-                        <Link to='/addService' className="btn btn-dark px-3">Add Service</Link>
+                        <Link to='/addRoom' className="btn btn-dark px-3">Create A New Room</Link>
                     </div>
 
 
-
                     {
-                        rooms &&  rooms.map((room) => (
-
+                       rooms &&  rooms.map((room) => (
 
 
                             <div key={room.id}
-                                 style={{ width: 330, margin: 10, display: "inline-block" }}
+                                 style={{width: 330, margin: 10, display: "inline-block"}}
                                  className="card"
                             >
-                                <div style={{ textAlign: "left" }} className="inner-card">
+                                <div style={{textAlign: "left"}} className="inner-card">
                                     {" "}
                                     <img
                                         src={room.image}
@@ -51,23 +83,27 @@ export function Room() {
                                     <div className="d-flex justify-content-between align-items-center mt-3 px-2">
                                         <h4>{room.name} </h4>{" "}
                                         <span className="heart">
-            <i className="fa fa-heart" />
+            <i className="fa fa-heart"/>
           </span>
                                     </div>
                                     <div className="mt-2 px-2">
                                         {" "}
                                         <small>
-                                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                                            accusantium doloremque laudantium
+                                            {room.includedService}
                                         </small>{" "}
                                     </div>
                                     <div className="px-2">
-                                        <h3>  $ {room.price}</h3>
+                                        <h3> $ {room.price}</h3>
                                     </div>
                                     <div className="px-2 mt-3">
                                         {" "}
-                                        <Link to='/UpdateHouse' className="btn btn-dark px-3">Edit</Link>{" "}
-                                        <button className="btn btn-outline-dark px-3">Delete</button>{" "}
+                                        <Link to={`/updateRoom/${room.id}`}
+                                              className="btn btn-dark px-3">Edit</Link>{" "}
+                                        <button className="btn btn-outline-dark px-3" onClick={() => {
+                                            deleteConfirmation(room.id, room.name)
+                                        }}>Delete
+                                        </button>
+                                        {" "}
                                     </div>
                                 </div>
                             </div>
@@ -92,7 +128,7 @@ export function Room() {
                                                 <ul className="pagination d-flex justify-content-center flex-wrap pagination-rounded-flat pagination-success">
                                                     <li className="page-item">
                                                         <a className="page-link" href="#" data-abc="true">
-                                                            <i className="fa fa-angle-left" />
+                                                            <i className="fa fa-angle-left"/>
                                                         </a>
                                                     </li>
                                                     <li className="page-item active">
@@ -117,7 +153,7 @@ export function Room() {
                                                     </li>
                                                     <li className="page-item">
                                                         <a className="page-link" href="#" data-abc="true">
-                                                            <i className="fa fa-angle-right" />
+                                                            <i className="fa fa-angle-right"/>
                                                         </a>
                                                     </li>
                                                 </ul>

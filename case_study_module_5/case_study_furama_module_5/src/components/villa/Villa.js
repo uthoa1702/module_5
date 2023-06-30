@@ -6,19 +6,46 @@ import {SlideHome} from "../header/SlideHome";
 import {Link} from "react-router-dom";
 import {Header} from "../header/Header";
 import * as villaService from "../service/VillaService"
+import Swal from "sweetalert2";
+import * as roomService from "../service/RoomService";
 
 export function Villa() {
     const [villas, setVilla] = useState([])
+    const showList = async () => {
+        const villas = await villaService.findAll()
+        setVilla(villas)
+    }
     useEffect(() => {
-        const showList = async () => {
-            const villas = await villaService.findAll()
-            setVilla(villas)
-        }
+
         showList()
     }, [])
 
-// if(!villas.isArray) return  null;
+    // delete item
+    const deleteConfirmation = (id, name) => {
+        Swal.fire({
+            title: 'Confirmation',
+            text: `Are you sure to remove ${name} ?`,
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Delete',
+            cancelButtonColor: '#6d6d6d',
+            confirmButtonColor: '#ff0000',
 
+            cancelButtonText: 'Cancel',
+        }).then(async (result) => {
+            if (result.isConfirmed) {
+                await villaService.deleteById(id)
+                await showList()
+                await Swal.fire('Deleted!', `Removed ${name}.`, 'success');
+
+
+            }
+        })
+
+    }
+    if (!villas) {
+        return null
+    }
     return (
         <>
             <Header/>
@@ -28,7 +55,7 @@ export function Villa() {
                 <div style={{textAlign: "center"}} className="container">
                     <h1 className="fw-light">Our Villas</h1>
                     <div>
-                        <Link to='/addService' className="btn btn-dark px-3">Add Service</Link>
+                        <Link to='/addVilla' className="btn btn-dark px-3">Create A New Villa</Link>
                     </div>
 
 
@@ -64,8 +91,12 @@ export function Villa() {
                                     </div>
                                     <div className="px-2 mt-3">
                                         {" "}
-                                        <Link to='/UpdateHouse' className="btn btn-dark px-3">Edit</Link>{" "}
-                                        <button className="btn btn-outline-dark px-3">Delete</button>
+                                        <Link to={`/UpdateVilla/${villa.id}`}
+                                              className="btn btn-dark px-3">Edit</Link>{" "}
+                                        <button className="btn btn-outline-dark px-3" onClick={() => {
+                                            deleteConfirmation(villa.id, villa.name)
+                                        }}>Delete
+                                        </button>
                                         {" "}
                                     </div>
                                 </div>
