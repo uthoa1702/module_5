@@ -16,6 +16,7 @@ import {ToastContainer} from "react-toastify";
 import {UpdateRoom} from "./components/room/UpdateRoom";
 import {AddVilla} from "./components/villa/AddVilla";
 import {ContractList} from "./components/contracts/ContractList";
+import {AddContract} from "./components/contracts/AddContract";
 
 
 
@@ -29,6 +30,7 @@ function App() {
                 <Route path="/addHouse" element={<AddHouse/>}/>
                 <Route path="/addRoom" element={<AddRoom/>}/>
                 <Route path="/addVilla" element={<AddVilla/>}/>
+                <Route path="/addContract" element={<AddContract/>}/>
 
                 <Route path="/updateHouse/:id" element={<UpdateHouse/>}/>
                 <Route path="/updateRoom/:id" element={<UpdateRoom/>}/>

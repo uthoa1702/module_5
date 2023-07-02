@@ -4,6 +4,7 @@ import {Footer} from "../footer/Footer";
 import * as customerService from '../service/customer/customerService'
 import * as facilitiesService from '../service/facilities/FacilitiesService'
 import * as contractService from '../service/contract/ContractService'
+import {Link} from "react-router-dom";
 
 export const ContractList = () => {
     const [contract, setContract] = useState([]);
@@ -67,7 +68,7 @@ if (!contract) {
                 >
                     <h1>CONTRACT LIST</h1>
                 </div>
-                <button className="btn btn-success">Create</button>
+                <Link to='/addContract' className="btn btn-success">Create</Link>
                 <table
                     id="example"
                     className="table table-hover table-striped table-bordered"
@@ -91,9 +92,9 @@ if (!contract) {
                         contract.map((contract)=>(
                             <tr key={contract.id}>
                                 <td>{contract.id}</td>
-                                <td>{customer.find((cus)=>cus.id === contract.customer)?.name}</td>
+                                <td>{customer.find((cus)=>cus.id == contract.customer)?.name}</td>
                                 {/*{customerType.find((type) => type.id == cus.typeOfCustomer)?.name}*/}
-                                <td>{facilities.find((fac)=>fac.id === contract.service)?.name}</td>
+                                <td>{facilities.find((fac)=>fac.id == contract.service)?.name}</td>
                                 <td>{contract.startDate}</td>
                                 <td>{contract.endDate}</td>
                                 <td>{contract.deposit}</td>

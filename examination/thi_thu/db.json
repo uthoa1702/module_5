@@ -1,0 +1,30 @@
+{
+  "product": [
+    {
+      "id": 1,
+      "name": "hoa",
+      "price": 100,
+      "type": "2"
+    },
+    {
+      "id": 2,
+      "name": "sung nuoc",
+      "price": 1000,
+      "type": "3"
+    }
+  ],
+  "productType": [
+    {
+      "id": 1,
+      "name": "nuoc uong"
+    },
+    {
+      "id": 2,
+      "name": "thuc an"
+    },
+    {
+      "id": 3,
+      "name": "do dung"
+    }
+  ]
+}
