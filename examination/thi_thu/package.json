@@ -22,7 +22,7 @@
     "bootstrap": "^5.3.0"
   },
   "scripts": {
-    "json-server": "json-server -p 8080 -w db.json",
+    "json-server": "json-server -p 1702 -w db.json",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
