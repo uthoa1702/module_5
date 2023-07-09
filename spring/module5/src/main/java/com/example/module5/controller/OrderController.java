@@ -42,9 +42,6 @@ public class OrderController {
     @PostMapping("/orders/create")
     public void createOrder(@RequestBody Orders orders) {
         iOrderService.save(orders.getDate(), orders.getPrice(), orders.getProduct().getId(), orders.getQuantity(), orders.getTotal());
-
-
-
-        emailService.sendEmail("uthoa1710@gmail.com","Purchased new ","anh iu em lam" + orders.getDate());
+        emailService.sendEmail("uthoa1710@gmail.com", "Purchased new ", "anh iu em lam" + orders.getDate());
     }
 }
