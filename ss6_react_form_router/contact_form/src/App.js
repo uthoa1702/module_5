@@ -2,28 +2,17 @@ import './App.css';
 import React from "react";
 import {ContactForm} from "./components/ContactForm";
 import {ToastContainer} from "react-toastify";
+import {FlappyBird} from "./components/FlappyBird";
 
 
 
-function App() {
+const App = () => {
     return (
-        <>
-            <ContactForm />
-            <ToastContainer
-                position="top-center"
-                autoClose={5000}
-                hideProgressBar={false}
-                newestOnTop={false}
-                closeOnClick
-                rtl={false}
-                pauseOnFocusLoss
-                draggable
-                pauseOnHover
-                theme="dark"
-            />
-
-        </>
+        <div className="app">
+            <h1>Caro Game</h1>
+            <FlappyBird />
+        </div>
     );
-}
+};
 
 export default App;

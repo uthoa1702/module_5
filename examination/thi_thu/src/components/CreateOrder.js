@@ -35,11 +35,13 @@ const getProduct = async (id) => {
             <br/>
             <div className='center'>
                 <Formik initialValues={{
-                    date: '',
                     product: selectedPro,
-                    quantity: 0,
+                    date: '',
+
                     price: 0,
-                    total: 0
+                    total: 0,
+
+                    quantity: 0,
                 }}
                         validationSchema={yup.object({
                             date: yup.date().required("Need to be filled").max(new Date(), 'Not in the future'),
@@ -48,8 +50,9 @@ const getProduct = async (id) => {
                         })}
                         onSubmit={(values) => {
                             const res = async () => {
-                                values.price = pro.find((p) => p.id == values.product)?.price
-                                values.total = values.price * values.quantity
+                                values.product = +values.product
+                                values.price = pro.find(async (p) => p.id == values.product)?.price
+                                values.total =await values.price * values.quantity
                                 await orderService.save(values)
                                 navigate('/')
                                 Swal.fire({

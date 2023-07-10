@@ -31,7 +31,7 @@ export async function search(values) {
 
 export async function save(values) {
     try {
-        await axios.post("http://localhost:8080/api/admin/orders/create", values)
+        await axios.post("http://localhost:8080/api/admin/create", values)
     } catch (e) {
         console.log(e)
     }

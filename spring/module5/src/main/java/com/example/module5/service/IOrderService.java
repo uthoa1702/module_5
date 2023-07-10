@@ -13,5 +13,5 @@ public interface IOrderService {
     void deleteById(Long id);
 
 
-    void save(String date, Double price, Long id, Integer quantity, Double total);
+    void save(Long productId, String date, Double price, Double total, Integer quantity);
 }

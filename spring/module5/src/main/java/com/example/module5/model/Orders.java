@@ -16,7 +16,7 @@ public class Orders {
 
     private Double price;
     private Double total;
-    private Integer quantity;
+    private int quantity;
 
     @Column(name = "is_delete",columnDefinition = "BIT default 0")
     private boolean isDelete ;
@@ -24,7 +24,7 @@ public class Orders {
     public Orders() {
     }
 
-    public Integer getQuantity() {
+    public int getQuantity() {
         return quantity;
     }
 
@@ -36,7 +36,7 @@ public class Orders {
         isDelete = delete;
     }
 
-    public Orders(Long id, Product product, String date, Double price, Double total, Integer quantity, boolean isDelete) {
+    public Orders(Long id, Product product, String date, Double price, Double total, int quantity, boolean isDelete) {
         this.id = id;
         this.product = product;
         this.date = date;
@@ -46,11 +46,11 @@ public class Orders {
         this.isDelete = isDelete;
     }
 
-    public void setQuantity(Integer quantity) {
+    public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
 
-    public Orders(Product product, String date, Double price, Double total, Integer quantity) {
+    public Orders(Product product, String date, Double price, Double total, int quantity) {
         this.product = product;
         this.date = date;
         this.price = price;

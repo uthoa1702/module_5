@@ -24,8 +24,8 @@ public class OrderServiceImpl implements IOrderService {
     }
 
     @Override
-    public void save(String date, Double price, Long productId, Integer quantity, Double total) {
-        orderRepository.create(date,price,productId,quantity,total);
+    public void save(Long productId, String date, Double price, Double total, Integer quantity) {
+        orderRepository.create(productId,date,price,total,quantity);
     }
 
 

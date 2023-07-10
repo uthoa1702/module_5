@@ -25,7 +25,7 @@ public interface OrderRepository extends JpaRepository<Orders,Long> {
 @Modifying
     @Query(value = "INSERT INTO orders (date,price,total,product_id,quantity,is_delete)  VALUES (:date,:price,:total,:productId,:quantity,FALSE)",nativeQuery = true)
 
-    void create(@Param("date") String date, @Param("price")Double price,@Param("productId") Long productId,@Param("quantity") Integer quantity,@Param("total") Double total);
+    void create(@Param("productId") Long productId,@Param("date") String date, @Param("price")Double price,@Param("total") Double total,@Param("quantity") Integer quantity);
 
 
 

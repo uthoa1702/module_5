@@ -39,9 +39,17 @@ public class OrderController {
     }
 
     @Transactional
+<<<<<<< Updated upstream
     @PostMapping("/orders/create")
     public void createOrder(@RequestBody Orders orders) {
         iOrderService.save(orders.getDate(), orders.getPrice(), orders.getProduct().getId(), orders.getQuantity(), orders.getTotal());
         emailService.sendEmail("uthoa1710@gmail.com", "Purchased new ", "anh iu em lam" + orders.getDate());
+=======
+    @PostMapping("/create")
+    public void createOrder(@RequestBody Orders orders) {
+        System.out.println(orders);
+        //(Product product, String date, Double price, Double total, Integer quantity)
+        iOrderService.save(orders.getProduct().getId(),orders.getDate(), orders.getPrice(),  orders.getTotal(), orders.getQuantity());
+>>>>>>> Stashed changes
     }
 }
