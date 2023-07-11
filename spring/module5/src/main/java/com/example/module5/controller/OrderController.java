@@ -39,7 +39,7 @@ public class OrderController {
     }
 
     @Transactional
-    @PostMapping("/orders/create")
+    @PostMapping("/create")
     public void createOrder(@RequestBody Orders orders) {
         iOrderService.save(orders.getProduct().getId(), orders.getDate(), orders.getPrice(), orders.getTotal(), orders.getQuantity());
 
