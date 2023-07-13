@@ -1,5 +1,7 @@
 package com.example.module5.model;
 
+import com.sun.istack.NotNull;
+
 import javax.persistence.*;
 
 @Entity
@@ -12,6 +14,9 @@ public class Orders {
     @ManyToOne
     private Product product;
 
+
+
+    @NotNull
     private String date;
 
     private Double price;

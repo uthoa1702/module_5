@@ -9,9 +9,9 @@ function App() {
     return (
         <>
             <Routes>
-                <Route path='/' element={<OrderList/>}/>
-                <Route path='/create' element={<CreateOrder/>}/>
-                {/*<Route path='/' element={<DemoEmail/>}/>*/}
+                {/*<Route path='/' element={<OrderList/>}/>*/}
+                {/*<Route path='/create' element={<CreateOrder/>}/>*/}
+                <Route path='/' element={<DemoEmail/>}/>
             </Routes>
 
         </>

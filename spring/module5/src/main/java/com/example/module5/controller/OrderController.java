@@ -43,7 +43,7 @@ public class OrderController {
     public void createOrder(@RequestBody Orders orders) {
         iOrderService.save(orders.getProduct().getId(), orders.getDate(), orders.getPrice(), orders.getTotal(), orders.getQuantity());
 
-        emailService.sendEmail("uthoa1710@gmail.com", "Purchased new ", "anh iu em lam" + orders.getDate());
+        emailService.sendEmail("phanvuankhang@gmail.com", " new Purchase ", "new order in  " + orders.getDate());
 
     }
 }

@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="24105ada-edef-4864-8057-02137abcc1ea" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../spring/module5/src/main/java/com/example/module5/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring/module5/src/main/java/com/example/module5/controller/OrderController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +58,8 @@
       <workItem from="1688540434930" duration="3611000" />
       <workItem from="1688632231207" duration="19000" />
       <workItem from="1689086460457" duration="875000" />
+      <workItem from="1689125626759" duration="32000" />
+      <workItem from="1689212175378" duration="1479000" />
     </task>
     <servers />
   </component>
@@ -67,10 +67,10 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="740" y="271" key="FileChooserDialogImpl" timestamp="1688632248092">
+    <state x="740" y="271" key="FileChooserDialogImpl" timestamp="1689125657703">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="740" y="271" key="FileChooserDialogImpl/0.0.1920.1032@0.0.1920.1032" timestamp="1688632248092" />
+    <state x="740" y="271" key="FileChooserDialogImpl/0.0.1920.1032@0.0.1920.1032" timestamp="1689125657703" />
     <state width="1899" height="279" key="GridCell.Tab.0.bottom" timestamp="1689087342296">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
